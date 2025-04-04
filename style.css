@@ -459,8 +459,8 @@ body {
 }
 
 .rev-card img {
-    width: 20%;
-    margin-bottom: 5px;
+    width: 70%;
+    margin: 5px 0 8px 0;
 }
 
 .rev-card p {
@@ -817,16 +817,18 @@ body {
     .rev-con-con .rev-card {
         width: 100%;
         max-width: 350px;
-        min-height: 250px;
+        min-height: fit-content;
+        height: fit-content;
         padding: 10px 20px;
     }
     .rev-card img {
-        width: 60px;
+        width: 130px;
         margin-bottom: 8px;
     }
     
     .rev-card p {
         font-size: 16px;
+        margin-bottom: 20px;
     }
     
     .contact-section {

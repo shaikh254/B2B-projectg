@@ -841,6 +841,9 @@ html {
 .imgs-portion {
     max-width: 450px;
 }
+    .imgs-portion img.about-img-p {
+    width: 100%;
+}
 
 .about-con-con {
     width: 100%;

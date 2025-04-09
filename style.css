@@ -170,7 +170,7 @@ html {
     max-width: 650px;
     width: 100%;
     z-index: 10;
-    animation: animateone 0.3s ease-out forwards;
+    animation: animateone 1s ease-out forwards;
 }
 
 @keyframes animateone {

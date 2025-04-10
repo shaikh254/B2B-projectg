@@ -152,10 +152,17 @@
         <a href="tel:8179199225">
         <button><i class="fa fa-commenting" aria-hidden="true"></i>Text Now</button>
         </a>
-        <a href="mailto:magician.ivy@gmail.com">
+        <!-- <a href="mailto:magician.ivy@gmail.com">
         <button><i class="fa fa-envelope" aria-hidden="true"></i>Mail Now</button>
-        </a>
+        </a> -->
       </div> 
+      <form id="contact-form">
+        <input type="text" name="from_name" placeholder="Name" required />
+        <input type="email" name="reply_to" placeholder="Email" required />
+        <input type="text" name="phone" placeholder="Phone" />
+        <textarea name="message" placeholder="Message" required rows="6"></textarea>
+        <button type="submit">Send</button>
+      </form>      
   </div>
 
   <!-- footer start here -->
@@ -181,5 +188,20 @@
 
     </div>
     <script src="script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init("YOUR_USER_ID"); // From EmailJS Dashboard
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    emailjs.sendForm("service_rzrrl0s", "template_cuhk26f", this)
+      .then(() => {
+        alert("Message sent successfully!");
+        this.reset();
+      }, (error) => {
+        alert("Failed to send message: " + error);
+      });
+  });
+</script>service_rzrrl0s 
 </body>
 </html>

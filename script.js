@@ -31,3 +31,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbarMenu = document.getElementById('UnOrderList');
     navbarMenu.classList.toggle('activeul');
   });
+
+  function parallax(e) {
+    document.querySelectorAll('.elements').forEach(layer => {
+      const speed = layer.getAttribute('data-speed');
+      const x = (window.innerWidth - e.pageX * speed) / 100;
+      layer.style.transform = `translateX(${x}px)`;
+    });
+  }
+
+  document.addEventListener('mousemove', parallax);
+
+  const cursor = document.querySelector(".custom-cursor");
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+  

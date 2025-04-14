@@ -28,6 +28,7 @@ body {
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
+    cursor: none;
 }
 
 a {
@@ -37,6 +38,21 @@ a {
 html {
     scroll-behavior: smooth;
 }
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 130px;
+    pointer-events: none;
+    background-image: url(images/icons/cursor-design.svg); /* use your wand/card/star SVG */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 9999;
+    transform: translate(0%, 0%);
+  }
+  
 
 /* main container css start here */
 
@@ -127,6 +143,7 @@ html {
     transition: color 0.2s ease-out;
     position: relative;
     line-height: 16px;
+    cursor: none;
 }
 
 .unorder-list li img {
@@ -149,7 +166,6 @@ html {
    background: none;
    font-size: 25px;
    color: var(--white-color);
-   cursor: pointer;
 }
 
 /* hero content css start here */
@@ -170,7 +186,12 @@ html {
     max-width: 650px;
     width: 100%;
     z-index: 10;
+    position: relative;
     animation: animateone 0.3s ease-out forwards;
+}
+
+.hero-content .hero-image img {
+    width: 100%;
 }
 
 @keyframes animateone {
@@ -213,7 +234,6 @@ html {
     width: 100%;
     z-index: 10;
     margin-bottom: 30px;
-    animation: animateone 0.3s ease-out forwards;
 }
 
 .hero-content h1 {
@@ -226,19 +246,11 @@ html {
     text-transform: uppercase;
     position: absolute;
     z-index: 1px;
-    animation: animateone 0.3s ease-out forwards;
 }
 
 .hero-content img {
     width: 150px;
     z-index: 10;
-    animation: animatetwo 0.3s ease-out forwards;
-}
-
-@keyframes animatetwo {
-    from {transform: translate(0,100px);
-    opacity: 0;}
-    to {transform: translate(0,0);opacity: 1;}
 }
 
 .hero-content p {
@@ -250,7 +262,6 @@ html {
     margin: 25px 0 40px 0;
     z-index: 10;
     font-weight: 300;
-    animation: animatetwo 0.3s ease-out forwards;
 }
 
 .hero-btns button {
@@ -265,6 +276,7 @@ html {
     font-family: var(--Lato-font);
     font-weight: 600;
     border: 4px solid var(--color-one);
+    cursor: none;
 }
 
 .hero-btns button:last-child {
@@ -505,6 +517,12 @@ html {
    top: 0;
 }
 
+.imgs-portion .play-cards {
+    position: absolute;
+    top: 0;
+    width: 80%;
+}
+
 .about-con-con {
     width: 55%;
 }
@@ -588,6 +606,7 @@ html {
     font-size: 18px;
     font-weight: 500;
     transition: 0.3s;
+    cursor: none;
 }
 
 .contact-section .contact-btns button i {
@@ -888,6 +907,7 @@ html {
 
 .contact-section .contact-btns button {
     font-size: 16px;
+    cursor: none;
 }
 
 /* footer css start here */
@@ -933,13 +953,33 @@ html {
     }
     
     .hero-heading .heading-stroke {
-        width: 90%;
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .hero-content h1 {
+        font-size: 37px;
+    }
+    .imgs-portion img {
+        width: 100%;
+    }  
+    .imgs-portion img.about-img-p {
+        width: 80%;
+    }
+    .imgs-portion {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media(max-width:450px) {
+    .hero-heading .heading-stroke {
+        max-width: 350px;
     }
     
     .hero-content h1 {
         font-size: 32px;
     }
-       
 }
 
 
@@ -1023,4 +1063,9 @@ html {
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
+    cursor: none;
 }
+
+.animate-text {
+    transition: transform 0.3s ease;
+  }
